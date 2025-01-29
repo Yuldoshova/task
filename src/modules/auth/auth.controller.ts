@@ -1,7 +1,9 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ForgotPasswordDto, LoginDto, RefreshTokenDto, RegisterDto } from './dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Auth")
 @Controller({ version: "1", path: "auth" })
 export class AuthController {
 
