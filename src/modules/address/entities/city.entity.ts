@@ -1,5 +1,6 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Country } from "./country.entity";
+import Weather from "../../weather/entities/weather.entity";
 
 @Entity("cities")
 export class City {
@@ -17,4 +18,7 @@ export class City {
 
     @Column({ name: "longitude", type: "decimal", nullable: true })
     longitude: number
+
+    @OneToMany(() => Weather, weather => weather.city, { cascade: true })
+    weathers: Weather[]
 }

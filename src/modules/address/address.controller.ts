@@ -1,7 +1,10 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CreateCityDto, CreateCountryDto, UpdateCityDto, UpdateCountryDto } from './dto';
 import { AddressService } from './address.service';
+import { CreateCountryDto } from './dto/create-country.dto';
+import { UpdateCountryDto } from './dto/update-country.dto';
+import { CreateCityDto } from './dto/create-city.dto';
+import { UpdateCityDto } from './dto/update-city.dto';
 
 @ApiTags("Address")
 @Controller('address')

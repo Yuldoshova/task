@@ -4,8 +4,11 @@ import { Repository } from 'typeorm';
 import * as  bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { ForgotPasswordDto, LoginDto, RefreshTokenDto, RegisterDto } from './dto';
-import { User } from '../user';
+import { RegisterDto } from './dto/register.dto';
+import { LoginDto } from './dto/login.dto';
+import { ForgotPasswordDto } from './dto/forgot-password.dto';
+import { RefreshTokenDto } from './dto/refresh-token.dto';
+import { User } from '../user/entities/user.entity';
 
 @Injectable()
 export class AuthService {

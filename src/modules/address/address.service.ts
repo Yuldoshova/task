@@ -1,8 +1,13 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateCityDto, CreateCountryDto, UpdateCityDto, UpdateCountryDto } from './dto';
-import { City, Country } from './entities';
+import { Country } from './entities/country.entity';
+import { City } from './entities/city.entity';
+import { CreateCountryDto } from './dto/create-country.dto';
+import { UpdateCountryDto } from './dto/update-country.dto';
+import { CreateCityDto } from './dto/create-city.dto';
+import { UpdateCityDto } from './dto/update-city.dto';
+
 
 @Injectable()
 export class AddressService {
@@ -105,7 +110,7 @@ export class AddressService {
       throw new NotFoundException("City not found!")
     }
 
-    await this.countryRepository.delete(id)
+    await this.cityRepository.delete(id)
     return "Successfully deleted✅"
   }
 }
